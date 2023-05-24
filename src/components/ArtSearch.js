@@ -7,11 +7,11 @@ const ArtSearch = ({ getArt, setPage, page }) => {
     const [category, setCategory] = useState("")
 
     const handleSelectChange = (event) => {
-        setCategory(event.target.value)
+        setCategory(event.target.value.toLowerCase())
     }
 
     const handleQueryChange = (event) => {
-        setQuery(event.target.value)
+        setQuery(event.target.value.toLowerCase())
     };
 
     const handleSubmit = (event) => {

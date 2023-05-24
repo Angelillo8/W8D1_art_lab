@@ -25,9 +25,15 @@ const ArtContainer = () => {
         getArtWorkInfo(artWork.api_link)
     };
 
+    const changePage = (pageChanged) => {
+        console.log("I'm page changed: "+ pageChanged)
+        setPage(pageChanged)
+        console.log("after the setPAge "+page)
+        getArt(searchString, category, pageChanged)
+    } 
    
     const getArt = function (yourSearch, category, pageInit) {
-        setArts([])
+        // setArts([])
         setCategory(category)
         setSearchString(yourSearch)
         // setPage(pageInit)
@@ -37,10 +43,7 @@ const ArtContainer = () => {
             .then(artsData => setArts(artsData.data))
     }
 
-    const changePage = (pageChanged) => {
-        setPage(pageChanged)
-        getArt(searchString, category, page)
-    } 
+
 
     return (
         <>
